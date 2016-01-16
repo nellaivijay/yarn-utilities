@@ -58,7 +58,7 @@ def main():
             running_apps(app[0])
         elif app[5].strip() == "ACCEPTED":
             print app[0], app[1], app[3], app[5], app[7]
-            accepted_apps(app[0])
+            # accepted_apps(app[0])
 
 
 if __name__ == '__main__':
