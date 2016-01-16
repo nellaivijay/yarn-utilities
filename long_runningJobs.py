@@ -12,14 +12,16 @@ def running_apps(appid):
     command = "yarn application -status " + appid
     proc = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = proc.communicate()
-    print out
+    lines = out.split("\n")
+    print lines[1], lines[1].split(":")[1], , lines[2].split(":")[1], , lines[4].split(":")[1], lines[5].split(":")[1], \
+    lines[7].split(":")[1], lines[9].split(":")[1]
 
 
 def accepted_apps(appid):
     command = "yarn application -status " + appid
     proc = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = proc.communicate()
-    print out 
+    print out
 
 def main():
     try:
