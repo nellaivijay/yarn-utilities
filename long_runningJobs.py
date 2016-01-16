@@ -19,7 +19,7 @@ def accepted_apps(appid):
     command = "yarn application -status " + appid
     proc = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = proc.communicate()
-    print out
+    print out 
 
 def main():
     try:
