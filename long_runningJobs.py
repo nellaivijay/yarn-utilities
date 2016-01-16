@@ -15,6 +15,12 @@ def running_apps(appid):
     print out
 
 
+def accepted_apps(appid):
+    command = "yarn application -status " + appid
+    proc = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    out, err = proc.communicate()
+    print out
+
 def main():
     try:
         proc = subprocess.Popen("yarn application -list --appStates RUNNING,ACCEPTED", shell=True,
@@ -33,6 +39,7 @@ def main():
             running_apps(app[0])
         elif app[5].strip() == "ACCEPTED":
             print app[0], app[1], app[3], app[5], app[7]
+            accepted_apps(app[0])
 
 
 if __name__ == '__main__':
