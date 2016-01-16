@@ -10,6 +10,7 @@ err = ""
 proc = ""
 
 
+# For Running applications
 def running_apps(appid):
     command = "yarn application -status " + appid
     proc = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
