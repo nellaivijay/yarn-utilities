@@ -8,7 +8,7 @@ apps = []
 out = ""
 err = ""
 proc = ""
-
+ 
 
 def running_apps(appid):
     command = "yarn application -status " + appid
