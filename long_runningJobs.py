@@ -15,7 +15,7 @@ def running_apps(appid):
     proc = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = proc.communicate()
     lines = out.split("\n")
-    app_time = datetime.datetime.fromtimestamp(int(lines[4]) / 1e3)
+    app_time = datetime.datetime.fromtimestamp(int(lines[6].split(":")[1]) / 1e3)
     print  lines[1].split(":")[1], lines[2].split(":")[1], lines[4].split(":")[1], lines[6].split(":")[1], \
         lines[8].split(":")[1], lines[9].split(":")[1], app_time, (current_time - app_time)
 
