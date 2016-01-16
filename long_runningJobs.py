@@ -19,6 +19,9 @@ def running_apps(appid):
     out, err = proc.communicate()
     lines = out.split("\n")
     app_time = datetime.datetime.fromtimestamp(int(lines[6].split(":")[1]) / 1e3)
+    runnning_jobs.append(lines[1].split(":")[1] + "," + lines[2].split(":")[1] + "," + lines[4].split(":")[1] + "," +
+                         lines[6].split(":")[1] + "," + \
+                         lines[8].split(":")[1] + "," + lines[9].split(":")[1])
     print  lines[1].split(":")[1], lines[2].split(":")[1], lines[4].split(":")[1], lines[6].split(":")[1], \
         lines[8].split(":")[1], lines[9].split(":")[1], app_time, (current_time - app_time)
 
@@ -30,6 +33,9 @@ def accepted_apps(appid):
     out, err = proc.communicate()
     lines = out.split("\n")
     app_time = datetime.datetime.fromtimestamp(int(lines[6].split(":")[1]) / 1e3)
+    accepted_apps(lines[1].split(":")[1] + "," + lines[2].split(":")[1] + "," + lines[4].split(":")[1] + "," +
+                  lines[6].split(":")[1] + "," + \
+                  lines[8].split(":")[1] + "," + lines[9].split(":")[1])
     print  lines[1].split(":")[1], lines[2].split(":")[1], lines[4].split(":")[1], lines[6].split(":")[1], \
         lines[8].split(":")[1], lines[9].split(":")[1], app_time, (current_time - app_time)
 
